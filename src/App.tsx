@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const [cards, setCards] = useState([]);
+  useEffect(()=>{
+    axios({
+      method:'get',
+      url: 'http://localhost:3333/cards?_limit=30'
+    }).then((response)=>{
+      console.log(response.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+    .finally(()=> console.log('A chamada terminou!'))
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Hello world
     </div>
   );
 }

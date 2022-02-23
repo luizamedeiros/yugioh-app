@@ -14,7 +14,6 @@
 }
 
 .menu-list{
-    color: #fff;
     display: flex;
     flex-direction: row;
     list-style: none;

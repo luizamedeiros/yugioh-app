@@ -10,10 +10,10 @@ const App = () => {
       method: 'get',
       url: 'http://localhost:3333/cards?_limit=30'
     }).then((response) => {
-      setCards(response.data)
+      setCards(response.data);
     })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
       })
       .finally(() => console.log('A chamada terminou!'))
   }, [])
@@ -22,11 +22,12 @@ const App = () => {
     <div>
       {cards.map((card) => (
         <div>
-          {card.name_en}
           <img
-            alt={card.name}
             width={30}
-            src={card.card_images[0].image_url_small} />
+            alt={card.name}
+            src={card.card_images[0].image_url_small} 
+          />
+          {card.name_en}
         </div>
       ))}
     </div>

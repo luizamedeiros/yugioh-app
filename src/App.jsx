@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Card from '../src/components/Card'
 
 const App = () => {
 
@@ -20,17 +21,13 @@ const App = () => {
 
   return (
     <div className='container'>
-      {cards.map((card) => (
-        <div className='card-item'>
-          <img
-            width={30}
-            alt={card.name_en}
-            src={card.card_images[0].image_url_small} 
-          />
-          <span>{card.name_en}</span>
-          <span>Attribute: {card.attribute}</span>
-        </div>
-      ))}
+      {cards.map((card) =>
+        <Card
+          name={card.name}
+          attribute={card.attribute}
+          cardImage={card.card_images[0].image_url_small}
+        />
+      )}
     </div>
   );
 }

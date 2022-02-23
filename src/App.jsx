@@ -1,8 +1,7 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
+import api from '../src/services/axios';
 import Card from '../src/components/Card';
-import api from '../src/services/axios'
 
 const App = () => {
 

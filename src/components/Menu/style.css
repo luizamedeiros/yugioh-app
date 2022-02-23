@@ -1,0 +1,32 @@
+.menu {
+    background-color: #000;
+    display: flex;
+    height: 54px;
+    justify-content: space-between;
+    padding: 1% 5%;
+    align-items: center;
+}
+
+.menu-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-list{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 13px;
+}
+
+.menu-list li{
+    color: #fff;
+    font-size: 18px;
+}
+
+.menu-list li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

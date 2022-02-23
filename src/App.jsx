@@ -5,11 +5,13 @@ import Cards from './pages/Cards';
 import MyDecks from './pages/MyDecks';
 import DeckBuilder from './pages/DeckBuilder';
 import CardDetails from './pages/CardDetails';
+import Menu from './components/Menu'
 
 const App = () => {
 
   return (
     <BrowserRouter>
+    <Menu/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cards" element={<Cards />} />

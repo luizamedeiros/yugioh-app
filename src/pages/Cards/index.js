@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import api from '../../src/services/axios';
-import Card from '../../src/components/Card';
+import api from '../../../src/services/axios';
+import Card from '../../../src/components/Card';
 
 const Cards = () => {
 
@@ -29,4 +29,4 @@ const Cards = () => {
   );
 }
 
-export default App;
+export default Cards;

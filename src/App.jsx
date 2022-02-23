@@ -1,16 +1,15 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
-import Card from '../src/components/Card'
+import Card from '../src/components/Card';
+import api from '../src/services/axios'
 
 const App = () => {
 
   const [cards, setCards] = useState([]);
   useEffect(() => {
-    axios({
-      method: 'get',
-      url: 'http://localhost:3333/cards?_limit=30'
-    }).then((response) => {
+    api.get('cards?_limit=30')
+    .then((response) => {
       setCards(response.data);
     })
       .catch((error) => {

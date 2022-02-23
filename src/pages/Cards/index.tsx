@@ -3,15 +3,17 @@ import api from '../../services/axios';
 import Card from '../../components/Card';
 import './style.css';
 
+
+type CardImage = {
+  id: string;
+  image_url: string;
+  image_url_small: string;
+}
 type ICard = {
   id: string;
   name: string;
   attribute: string;
-  card_images: {
-    id: string;
-    image_url: string;
-    image_url_small: string;
-  }[];
+  card_images: Array<CardImage>;
 }
 
 const Cards = () => {

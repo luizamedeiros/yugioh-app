@@ -11,11 +11,11 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/cards" element={<Cards />}/>
-        <Route path="/my-decks" element={<MyDecks />}/>
-        <Route path="/card-details" element={<CardDetails />}/>
-        <Route path="/deck-builder" element={<DeckBuilder />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/cards" element={<Cards />} />
+        <Route path="/my-decks" element={<MyDecks />} />
+        <Route path="/card-details" element={<CardDetails />} />
+        <Route path="/deck-builder" element={<DeckBuilder />} />
       </Routes>
     </BrowserRouter>
   );

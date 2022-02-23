@@ -19,15 +19,16 @@ const App = () => {
   }, [])
 
   return (
-    <div>
+    <div className='container'>
       {cards.map((card) => (
-        <div>
+        <div className='card-item'>
           <img
             width={30}
-            alt={card.name}
+            alt={card.name_en}
             src={card.card_images[0].image_url_small} 
           />
-          {card.name_en}
+          <span>{card.name_en}</span>
+          <span>Attribute: {card.attribute}</span>
         </div>
       ))}
     </div>

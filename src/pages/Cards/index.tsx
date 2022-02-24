@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/axios';
 import Card from '../../components/Card';
-import './style.css';
 
 
 type ICard = {
@@ -32,7 +31,7 @@ const Cards = () => {
   }, [])
 
   return (
-    <div className='container'>
+    <div className='container cards'>
       {cards.map((card) =>
         <Card
           key={card.id}

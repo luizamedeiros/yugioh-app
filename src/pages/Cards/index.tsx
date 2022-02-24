@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import api from '../../services/axios';
 import Card from '../../components/Card';
 
-
 type ICard = {
   id: string;
   name: string;

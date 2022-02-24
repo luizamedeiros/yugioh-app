@@ -27,7 +27,6 @@ const Cards = () => {
       .catch((error) => {
         console.log(error);
       })
-      .finally(() => console.log('A chamada terminou!'))
   }, [])
 
   return (

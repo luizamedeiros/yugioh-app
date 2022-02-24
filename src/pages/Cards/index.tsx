@@ -4,25 +4,27 @@ import Card from '../../components/Card';
 import './style.css';
 
 
-type CardImage = {
-  id: string;
-  image_url: string;
-  image_url_small: string;
-}
 type ICard = {
   id: string;
   name: string;
   attribute: string;
   card_images: Array<CardImage>;
 }
+type CardImage = {
+  id: string;
+  image_url: string;
+  image_url_small: string;
+}
 
 const Cards = () => {
 
   const [cards, setCards] = useState<ICard[]>([]);
+
   useEffect(() => {
-    api.get('cards?_limit=30')
+    api.get('cards?_limit=32')
       .then((response) => {
         setCards(response.data);
+        console.log("cards:", cards)
       })
       .catch((error) => {
         console.log(error);

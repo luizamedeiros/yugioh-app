@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 4%;
+    padding: 3% 3% 0 3%;
 
     &.home{
       display: flex;
@@ -13,6 +13,9 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+    }
+    &.title{
+      font-size: 25px;
     }
 }
 .center{

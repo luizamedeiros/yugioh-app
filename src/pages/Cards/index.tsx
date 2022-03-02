@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/axios';
 import Card from '../../components/Card';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 type ICard = {
   id: string;
@@ -31,16 +31,19 @@ const Cards = () => {
   }, [])
 
   return (
-    <div className='container cards'>
-      {cards.map((card) =>
-        <Card
-          key={card.id}
-          name={card.name_en}
-          attribute={card.attribute}
-          cardImage={card.card_images[0].image_url_small}
-        />
-      )}
-    </div>
+    <>
+    <h2 className='container title'>{params.type} cards</h2>
+      <div className='container cards'>
+        {cards.map((card) =>
+          <Card
+            key={card.id}
+            name={card.name_en}
+            attribute={card.attribute}
+            cardImage={card.card_images[0].image_url_small}
+          />
+        )}
+      </div>
+    </>
   );
 }
 

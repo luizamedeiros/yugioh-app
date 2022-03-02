@@ -8,7 +8,7 @@ const Card = ({name, attribute, cardImage}) => {
                 src={cardImage}
             />
             <span className='center bold'>{name}</span>
-            <span className='center'>Attribute: {attribute}</span>
+            <span className='center'>Attribute: {attribute? attribute : "Unknown"}</span>
         </div>
     )
 }

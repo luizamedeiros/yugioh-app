@@ -37,9 +37,7 @@ const Cards = () => {
         {cards.map((card) =>
           <Card
             key={card.id}
-            name={card.name_en}
-            attribute={card.attribute}
-            cardImage={card.card_images[0].image_url_small}
+            card={card}
           />
         )}
       </div>

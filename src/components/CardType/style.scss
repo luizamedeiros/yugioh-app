@@ -2,7 +2,11 @@
     display: flex;
     flex-direction: column;
   }
-  
+.type-header{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
   .type{
     align-items: center;
     border-radius: 8px;

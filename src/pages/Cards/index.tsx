@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/axios';
 import Card from '../../components/Card';
+import {useParams} from 'react-router-dom';
 
 type ICard = {
   id: string;
@@ -15,11 +16,11 @@ type CardImage = {
 }
 
 const Cards = () => {
-
+  const params = useParams();
   const [cards, setCards] = useState<ICard[]>([]);
 
   useEffect(() => {
-    api.get('cards?_limit=32')
+    api.get(`cards?race=${params.type}`)
       .then((response) => {
         setCards(response.data);
         console.log("cards:", cards)

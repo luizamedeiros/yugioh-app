@@ -4,7 +4,7 @@ const Card = ({name, attribute, cardImage}) => {
     return (
         <div className='card-item'>
             <img
-                width={40}
+                width={140}
                 alt={name}
                 src={cardImage}
             />

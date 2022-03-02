@@ -1,6 +1,7 @@
 import React from "react";
 import handleCardColor from '../../utils/bgCardColor';
 import './style.scss';
+import { useNavigate } from 'react-router-dom';
 
 type CardTypeInfo = {
     title: string;
@@ -9,6 +10,7 @@ type CardTypeInfo = {
 }
 
 const CardType: React.FC<CardTypeInfo> = ({ icon, info, title }) => {
+    const navigate = useNavigate();
     const color = handleCardColor(title);
     return (
         <div className="type-container">
@@ -19,7 +21,11 @@ const CardType: React.FC<CardTypeInfo> = ({ icon, info, title }) => {
             <div className='type-items'>
                 {
                     info.map(type => (
-                        <div className={`type ${color}`}>
+                        <div
+                            key={type}
+                            className={`type ${color}`}
+                            onClick={() => navigate(`cards/${type}`)}
+                        >
                             <span>{type}</span>
                         </div>
                     ))

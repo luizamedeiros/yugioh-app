@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 
 const Card = ({name, attribute, cardImage}) => {
     return (

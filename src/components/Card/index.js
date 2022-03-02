@@ -8,8 +8,8 @@ const Card = ({name, attribute, cardImage}) => {
                 alt={name}
                 src={cardImage}
             />
-            <span>{name}</span>
-            <span>Attribute: {attribute}</span>
+            <span className='center'>{name}</span>
+            <span className='center'>Attribute: {attribute}</span>
         </div>
     )
 }

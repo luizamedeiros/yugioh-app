@@ -4,11 +4,10 @@ import './style.css';
 const Menu = () => {
     return (
         <div className="menu">
-            <h1 className="menu-title">Epic Library</h1>
+            <Link to="/">
+                <h1 className="menu-title">Epic Library</h1>
+            </Link>
             <ul className="menu-list">
-                <Link to="/">
-                    <li>Home</li>
-                </Link>
                 <Link to="/deck-builder">
                     <li>Deck Builder</li>
                 </Link>

@@ -10,7 +10,7 @@ const Card = ({ name, attribute, cardImage }) => {
                 />
             </abbr>
             <span className='center bold'>{name}</span>
-            <span className='center'>{attribute ? `Attribute: ${attribute}` : null}</span>
+            <span className='center'>{attribute ? `Attribute: ${attribute.charAt(0).toUpperCase() + attribute.slice(1).toLowerCase()}` : null}</span>
         </div>
     )
 }

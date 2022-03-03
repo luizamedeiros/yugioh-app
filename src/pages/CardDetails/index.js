@@ -3,7 +3,6 @@ import './style.scss';
 
 const CardDetails = () => {
     const location = useLocation();
-    console.log(location)
     const attr = location.state.attribute?  `${location.state.attribute.charAt(0).toUpperCase()
             + location.state.attribute.slice(1).toLowerCase()}`: `Undefined`
     return (

@@ -1,0 +1,18 @@
+.see-more-button{
+    border: solid #EFEFEF;
+    border-radius: 50%; 
+    display: flex;
+    font-size: 20px;
+    font-weight: bold; 
+    padding: 15px 20px;
+    &:hover{
+      cursor: pointer;
+      border: solid rgb(107, 107, 251);
+    }
+}
+.button-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px auto 25px;
+}

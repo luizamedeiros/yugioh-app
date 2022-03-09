@@ -14,7 +14,7 @@ const CardDetails = () => {
                     src={location.state.card_images[0].image_url}
                     alt={location.state.name_en}
                 />
-                <div className="details-container item text">
+                <div className="details-container text">
                     <span> <b>Card type:</b> {location.state.type}</span>
                     <span> <b> Attacks stats:</b> {location.state.atk}</span>
                     <span> <b> Defense stats:</b> {location.state.def}</span>

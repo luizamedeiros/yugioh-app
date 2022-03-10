@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import api from '../../services/axios';
 import Card from '../../components/Card';
-import { useParams } from 'react-router-dom';
 import './style.scss';
 
 type ICard = {

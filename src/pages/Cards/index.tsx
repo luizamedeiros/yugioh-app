@@ -24,12 +24,24 @@ const Cards = () => {
   useEffect(() => {
     api.get(`cards?race=${params.type}&_limit=18&_page=${page}`)
       .then((response) => {
-        setCards(response.data);
+        setCards([...cards, ...response.data]);
       })
       .catch((error) => {
         console.log(error);
       })
-  }, [params.type, page])
+  }, [params.type, page]);
+
+  useEffect(() => {
+    const intersectionOberserver = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        setPage((currentValue) => currentValue + 1);
+      }
+    })
+    if (document.querySelector('#sentinel')) {
+      intersectionOberserver.observe(document.querySelector('#sentinel')!);
+      return () => intersectionOberserver.disconnect()
+    }
+  }, []);
 
   return (
     <>
@@ -43,8 +55,7 @@ const Cards = () => {
         )}
       </div>
       <div className='button-div'>
-        <button className='see-more-button' onClick={() => setPage(page - 1)}> Back </button>
-        <button className='see-more-button' onClick={() => setPage(page + 1)}> Next </button>
+        <p id="sentinel" />
       </div>
     </>
   );

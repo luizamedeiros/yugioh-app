@@ -32,10 +32,9 @@ const CardDetails = () => {
                         <span> <b> Attribute: </b> {attr}</span>
                     </div>
                         {/* <span><b>Sets</b></span> */}
-                    <div className="badge">
-                        {state.card_sets.map((set: any) => (
-                            <span>{set.set_name}</span>
-                        )
+                    <div className="footer">
+                        {state.card_sets.map((set: any) => 
+                            <span  className="badge" key={set.set_code}>{set.set_name}</span>
                         )}
                     </div>
                     

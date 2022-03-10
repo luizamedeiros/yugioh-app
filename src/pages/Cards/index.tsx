@@ -19,7 +19,7 @@ type CardImage = {
 const Cards = () => {
   const params = useParams();
   const [cards, setCards] = useState<ICard[]>([]);
-  const [page, setPage] = useState<number>(1)
+  const [page, setPage] = useState<number>(0)
 
   useEffect(() => {
     api.get(`cards?race=${params.type}&_limit=18&_page=${page}`)

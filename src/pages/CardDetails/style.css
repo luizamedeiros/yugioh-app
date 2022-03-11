@@ -24,17 +24,15 @@
     color: #FFF;
     display: flex;
     flex-direction: column;
-    padding: 15px;
-  
+    padding: 20px;
+    
 }
 .card-details{
     display: flex;
     flex-direction: column;
-    flex-basis: 75%;
     font-size: 17px;
-    margin: 20px 25px;
-    text-align: left;
-    width: 325px
+    margin: 20px auto;
+    text-align: justify;
 }
 .card-details hr{
     width: 100%;
@@ -43,7 +41,6 @@
     color: white;
 }
 .badge{
-    /* justify-content: flex-end; */
     background-color: #FFF;
     border-radius: 4px;
     color: #142D45;
@@ -62,8 +59,9 @@
     align-items: center;
     gap: 5px;
 }
-
-
+.price a{
+    margin-bottom: 5px;
+}
 
 @media screen and (max-width: 760px){
     .details-wrapper{

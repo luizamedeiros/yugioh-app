@@ -12,8 +12,8 @@ const StoresDict = {
     "amazon_price": "Amazon",
     "ebay_price": "Ebay",
     "cardmarket_price": "CardMarket",
-    "tcgplayer_price": "TGC Player",
-    "coolstuffinc_price": "Cool Stuff Inc."
+    // "tcgplayer_price": "TGC Player",
+    // "coolstuffinc_price": "Cool Stuff Inc."
 }
 const CardDetails = () => {
     const { state }: any = useLocation();
@@ -48,14 +48,13 @@ const CardDetails = () => {
                                         href={`https://www.${StoresDict[key]}.com`}
                                         target={'blank'}>
                                         {/* @ts-ignore */}
-                                        {StoresDict[key]}:
+                                        {StoresDict[key]}: ${price[key]}
                                     </a>
-                                    <p>${price[key]}</p>
                                 </div>
                             ))
                         ))}
                     </div>
-                    {/* <span><b>Sets</b></span> */}
+                    <span ><b>Sets</b></span>
                     <div className="footer">
                         {state.card_sets.map((set: any) =>
                             <span className="badge" key={set.set_code}>{set.set_name}</span>

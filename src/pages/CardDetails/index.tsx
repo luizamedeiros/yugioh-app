@@ -7,13 +7,7 @@ interface ILocation {
         image_url: string;
     }[]
 }
-const Stores = [
-    "amazon_price",
-    "ebay_price",
-    "cardmarket_price",
-    "tcgplayer_price",
-    "coolstuffinc_price"
-]
+
 const StoresDict = {
     "amazon_price": "Amazon",
     "ebay_price": "Ebay",
@@ -46,17 +40,17 @@ const CardDetails = () => {
                         <span> <b> Attacks stats:</b> {state.atk}</span>
                         <span> <b> Defense stats:</b> {state.def}</span>
                         <hr />
-                        {Stores.map((key) => (
+                        {Object.keys(StoresDict).map((key) => (
                             state.card_prices.map((price: any) => (
                                 <div className='price'>
-                                <a className='priceLink' 
-                                // @ts-ignore
-                                href={`https://www.${StoresDict[key]}.com`} 
-                                target={'blank'}>
-                                    {/* @ts-ignore */}
-                                    {StoresDict[key]}:
-                                </a>
-                                <p>${price[key]}</p>
+                                    <a className='priceLink'
+                                        // @ts-ignore
+                                        href={`https://www.${StoresDict[key]}.com`}
+                                        target={'blank'}>
+                                        {/* @ts-ignore */}
+                                        {StoresDict[key]}:
+                                    </a>
+                                    <p>${price[key]}</p>
                                 </div>
                             ))
                         ))}

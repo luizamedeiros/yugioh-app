@@ -39,6 +39,9 @@
 .card-details hr{
     width: 100%;
 }
+.card-details a{
+    color: white;
+}
 .badge{
     /* justify-content: flex-end; */
     background-color: #FFF;
@@ -52,6 +55,12 @@
     gap: 5px;
     flex-wrap: wrap;
     flex-direction: column;
+}
+.price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
 }
 
 

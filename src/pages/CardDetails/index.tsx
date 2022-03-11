@@ -48,11 +48,16 @@ const CardDetails = () => {
                         <hr />
                         {Stores.map((key) => (
                             state.card_prices.map((price: any) => (
+                                <div className='price'>
+                                <a className='priceLink' 
                                 // @ts-ignore
-                                <a href={`www.${StoresDict[key]}.com`} >
+                                href={`https://www.${StoresDict[key]}.com`} 
+                                target={'blank'}>
                                     {/* @ts-ignore */}
-                                    {StoresDict[key]}: ${price[key]} 
+                                    {StoresDict[key]}:
                                 </a>
+                                <p>${price[key]}</p>
+                                </div>
                             ))
                         ))}
                     </div>

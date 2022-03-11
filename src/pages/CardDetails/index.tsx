@@ -54,7 +54,7 @@ const CardDetails = () => {
                             ))
                         ))}
                     </div>
-                    <span ><b>Sets</b></span>
+                    <span><b>Sets</b></span>
                     <div className="footer">
                         {state.card_sets.map((set: any) =>
                             <span className="badge" key={set.set_code}>{set.set_name}</span>

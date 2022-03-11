@@ -7,7 +7,20 @@ interface ILocation {
         image_url: string;
     }[]
 }
-
+const Stores = [
+    "amazon_price",
+    "ebay_price",
+    "cardmarket_price",
+    "tcgplayer_price",
+    "coolstuffinc_price"
+]
+const StoresDict = {
+    "amazon_price": "Amazon",
+    "ebay_price": "Ebay",
+    "cardmarket_price": "CardMarket",
+    "tcgplayer_price": "TGC Player",
+    "coolstuffinc_price": "Cool Stuff Inc."
+}
 const CardDetails = () => {
     const { state }: any = useLocation();
 
@@ -24,20 +37,32 @@ const CardDetails = () => {
                 />
                 <div className="text-div">
                     <h2 className="card-title"> {state.name_en} </h2>
+                    <span className="card-subtitle"> [{state.race}/{state.type}]</span>
+                    <span className="card-subtitle">{attr}</span>
                     <div className="card-details">
-                        <span> <b>Card type:</b> {state.type}</span>
+                        <span> <b> Level {state.level} </b></span>
+                        <span>{state.desc}</span>
+                        <hr />
                         <span> <b> Attacks stats:</b> {state.atk}</span>
                         <span> <b> Defense stats:</b> {state.def}</span>
-                        <span> <b> Race:</b> {state.race}</span>
-                        <span> <b> Attribute: </b> {attr}</span>
+                        <hr />
+                        {Stores.map((key) => (
+                            state.card_prices.map((price: any) => (
+                                // @ts-ignore
+                                <a href={`www.${StoresDict[key]}.com`} >
+                                    {/* @ts-ignore */}
+                                    {StoresDict[key]}: ${price[key]} 
+                                </a>
+                            ))
+                        ))}
                     </div>
-                        {/* <span><b>Sets</b></span> */}
+                    {/* <span><b>Sets</b></span> */}
                     <div className="footer">
-                        {state.card_sets.map((set: any) => 
-                            <span  className="badge" key={set.set_code}>{set.set_name}</span>
+                        {state.card_sets.map((set: any) =>
+                            <span className="badge" key={set.set_code}>{set.set_name}</span>
                         )}
                     </div>
-                    
+
                 </div>
             </div>
         </div>

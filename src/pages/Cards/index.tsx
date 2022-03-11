@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../services/axios';
 import Card from '../../components/Card';
@@ -20,42 +20,54 @@ const Cards = () => {
   const params = useParams();
   const [cards, setCards] = useState<ICard[]>([]);
   const [page, setPage] = useState<number>(0)
+  const [lastElement, setLastElement] = useState(null);
 
+  const observer = useRef(
+    new IntersectionObserver(
+      (entries) => {
+        const first = entries[0];
+        if (first.isIntersecting) {
+          setPage((currentPage) => currentPage + 1)
+        }
+      }
+    )
+  )
   useEffect(() => {
-    api.get(`cards?race=${params.type}&_limit=18&_page=${page}`)
+    api.get(`cards?race=${params.type}&_limit=10&_page=${page}`)
       .then((response) => {
         setCards([...cards, ...response.data]);
       })
       .catch((error) => {
         console.log(error);
       })
-  }, [params.type, page]);
+  }, [page]);
 
   useEffect(() => {
-    const intersectionOberserver = new IntersectionObserver(entries => {
-      if (entries.some(entry => entry.isIntersecting)) {
-        setPage((currentValue) => currentValue + 1);
-      }
-    })
-    if (document.querySelector('#sentinel')) {
-      intersectionOberserver.observe(document.querySelector('#sentinel')!);
-      return () => intersectionOberserver.disconnect()
+    const currentElement = lastElement;
+    const currentObserver = observer.current;
+    if (currentElement) {
+      currentObserver.observe(currentElement);
     }
-  }, []);
+  }, [lastElement]);
 
   return (
     <>
       <h2 className='container title'>{params.type} cards</h2>
       <div className='container cards'>
-        {cards.map((card) =>
-          <Card
-            key={card.id}
-            card={card}
-          />
+        {cards.map((card, index) => {
+          if (cards.length - 1 === index) {
+            return (
+              //@ts-ignore
+              <div ref={setLastElement} key={card.id}>
+                <Card
+                  card={card}
+                />
+              </div>
+            )
+          }
+          return (<Card key={card.id} card={card} />)
+        }
         )}
-      </div>
-      <div className='button-div'>
-        <p id="sentinel" />
       </div>
     </>
   );

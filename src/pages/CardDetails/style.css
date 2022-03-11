@@ -4,11 +4,15 @@
     justify-content: center;
     flex-basis: 50%;
 }
-.title{
-    display: flex;
-    font-size: 35px;
+.card-title{
+    font-size: 30px;
     font-weight: bold;
-    justify-content: center;
+    margin-bottom: 10px;
+}
+.card-subtitle{
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 .card-image{
     flex-direction: column;
@@ -27,10 +31,13 @@
     display: flex;
     flex-direction: column;
     flex-basis: 75%;
-    font-size: 20px;
-    margin: 25px;
+    font-size: 17px;
+    margin: 20px 25px;
     text-align: left;
     width: 325px
+}
+.card-details hr{
+    width: 100%;
 }
 .badge{
     /* justify-content: flex-end; */
